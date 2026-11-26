@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NUR ACADEMY</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@600;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF6EA;--card:rgba(255,255,255,.86);--ink:#17302A;--mut:#5B6E67;--em:#0F6B53;--onem:#fff;--gold:#B8923A;--soft:#EFE6CD;--line:#E3D6B0;--ok:#16794A;--okb:#DCF3E4;--bad:#B3261E;--badb:#FBE2DF;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1B16;--card:rgba(20,44,37,.88);--ink:#EFE9D6;--mut:#A8B8B1;--em:#4CC3A0;--onem:#06281F;--gold:#E0BC66;--soft:#17332B;--line:#2B4A40;--ok:#6BD39A;--okb:#12382A;--bad:#FF8A80;--badb:#40191A}}
+:root[data-theme="dark"]{--bg:#0B1B16;--card:rgba(20,44,37,.88);--ink:#EFE9D6;--mut:#A8B8B1;--em:#4CC3A0;--onem:#06281F;--gold:#E0BC66;--soft:#17332B;--line:#2B4A40;--ok:#6BD39A;--okb:#12382A;--bad:#FF8A80;--badb:#40191A}
+*{box-sizing:border-box}html{scroll-padding-top:110px}
+body{margin:0;color:var(--ink);font:16px/1.55 Nunito,system-ui,sans-serif;background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70'%3E%3Cpath d='M35 6l8 21 21 8-21 8-8 21-8-21-21-8 21-8z' fill='none' stroke='%23C9A24B' stroke-opacity='.16'/%3E%3C/svg%3E")}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#073B2F;z-index:21}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;margin:.2em 0 .4em;line-height:1.15}h1{font-size:clamp(2rem,6vw,3.2rem)}h2{font-size:1.9rem}h3{font-size:1.4rem}
+.ar{font-family:Amiri,'Noto Naskh Arabic','Traditional Arabic',serif;direction:rtl}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:linear-gradient(90deg,#073B2F,#0F6B53);color:#fff;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--gold)}
+header b{font:700 1.45rem 'Cormorant Garamond',serif;cursor:pointer;letter-spacing:.1em}header i{color:#E0BC66;font-style:normal}
+.lg button{background:transparent;border:1px solid rgba(255,255,255,.45);color:#fff;border-radius:8px;padding:4px 8px;margin-left:4px;min-height:34px;font-size:.85rem}.lg .on{background:#E0BC66;color:#073B2F;border-color:#E0BC66}
+nav{display:flex;gap:6px;overflow-x:auto;padding:8px 12px;background:var(--soft)}nav button{flex:none;background:transparent;color:var(--ink);border:1px solid var(--line);padding:7px 14px;min-height:38px}nav .on{background:var(--em);color:var(--onem);border-color:var(--em)}
+main{max-width:960px;margin:0 auto;padding:18px 14px 70px}
+button{font:700 1rem Nunito,sans-serif;border:0;border-radius:12px;padding:11px 18px;min-height:44px;cursor:pointer;background:var(--em);color:var(--onem);transition:transform .15s,opacity .15s}
+button:hover{opacity:.9}button:active{transform:scale(.97)}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.gh{background:transparent;color:var(--em);border:1.5px solid var(--em)}
+.card{background:var(--card);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0;box-shadow:0 6px 22px rgba(7,59,47,.08)}
+.rv{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}.rv.in{opacity:1;transform:none}
+.glow{box-shadow:0 0 0 1px var(--gold),0 0 26px rgba(201,162,75,.4)}
+.hero{text-align:center;padding:30px 16px;background:linear-gradient(160deg,rgba(7,59,47,.95),rgba(15,107,83,.9));color:#F6EFD8}.hero h1{color:#fff}.hero .big{font-size:5rem;color:#E0BC66;line-height:1.1}
+.hero input{max-width:320px;margin:6px auto;display:block}.hero button{background:#E0BC66;color:#073B2F}.hero .gh{background:transparent;color:#F6EFD8;border-color:#F6EFD8}
+input,select,textarea{width:100%;font:inherit;padding:11px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
+.gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
+.lt{text-align:center;padding:10px;cursor:pointer}.lt .ar{font-size:2.6rem;line-height:1.3;color:var(--em)}.lt small{color:var(--mut)}
+.huge{font-size:8rem;line-height:1.2;color:var(--em)}
+.tag{display:inline-block;background:var(--soft);border-radius:99px;padding:3px 12px;margin:2px;font-size:.85rem}
+.ex{font-size:2rem;line-height:1.8}.h{color:var(--gold)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.mut{color:var(--mut);font-size:.92rem}
+.bar{height:10px;background:var(--soft);border-radius:9px;overflow:hidden;margin:6px 0}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--em),var(--gold));transition:width .8s}
+.path{display:grid;grid-template-columns:repeat(auto-fill,minmax(125px,1fr));gap:12px}
+.node{text-align:center;cursor:pointer;padding:12px 6px;border-radius:16px;border:1px solid var(--line);background:var(--card)}.node span{display:grid;place-items:center;width:44px;height:44px;margin:0 auto 6px;border-radius:50%;background:var(--soft);font-weight:700}
+.node.d span{background:var(--em);color:var(--onem)}.node.c{border-color:var(--gold)}.node.c span{box-shadow:0 0 18px var(--gold);border:2px solid var(--gold)}
+.opt{display:block;width:100%;text-align:left;background:var(--card);color:var(--ink);border:1.5px solid var(--line);margin:8px 0}.opt.ok{background:var(--okb);border-color:var(--ok);color:var(--ok)}.opt.bad{background:var(--badb);border-color:var(--bad);color:var(--bad)}
+.note{background:var(--soft);border-left:4px solid var(--gold);padding:10px 14px;border-radius:8px;font-size:.9rem;margin:12px 0}
+canvas{width:100%;max-width:320px;aspect-ratio:1;background:var(--card);border:2px dashed var(--gold);border-radius:16px;touch-action:none}
+table{width:100%;border-collapse:collapse;font-size:.92rem}th,td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left}th{cursor:pointer}
+.badge{opacity:.35;filter:grayscale(1)}.badge.on{opacity:1;filter:none}
+.cf{position:fixed;top:-14px;width:9px;height:14px;z-index:99;pointer-events:none;animation:fall 2.4s linear forwards}@keyframes fall{to{transform:translateY(105vh) rotate(720deg)}}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#073B2F;color:#fff;padding:10px 18px;border-radius:12px;z-index:50;max-width:90%;display:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.bar i{transition:none}}
+</style>
+</head>
+<body>
+<header id="hd"></header><nav id="nv"></nav><main id="app"></main><div class="toast" id="toast"></div>
+<script>
+/* ===== helpers & storage (swap DB layer for Supabase later) ===== */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const sh=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const pick=(a,n)=>sh(a).slice(0,n);
+let S={lang:'ru',users:{},cur:null,tasks:[]};
+try{Object.assign(S,JSON.parse(localStorage.getItem('nur_v1')||'{}'))}catch(e){}
+const save=()=>{try{localStorage.setItem('nur_v1',JSON.stringify(S))}catch(e){}};
+const tx=s=>{const p=s.split('|');return p[{ru:0,ky:1,en:2}[S.lang]]||p[0]};
+const me=()=>S.users[S.cur];
+const today=()=>new Date().toISOString().slice(0,10);
+const toast=m=>{const e=$('#toast');e.textContent=m;e.style.display='block';clearTimeout(toast.h);toast.h=setTimeout(()=>e.style.display='none',3000)};
+function addPts(u,n){u.pts+=n;const d=today();if(u.day.d!==d){const y=new Date(Date.now()-864e5).toISOString().slice(0,10);u.streak=u.last===y?u.streak+1:1;u.day={d,p:0};u.last=d}u.day.p+=n;save()}
+function conf(){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;for(let i=0;i<60;i++){const s=document.createElement('i');s.className='cf';s.style.cssText=`left:${Math.random()*100}vw;background:${['#C9A24B','#0F6B53','#EFE6CD','#E0BC66'][i%4]};animation-delay:${Math.random()*.6}s`;document.body.appendChild(s);setTimeout(()=>s.remove(),3300)}}
+/* ===== audio: add verified recordings to AUDIO, e.g. 'ب':'audio/ba.mp3' ===== */
+const AUDIO={};
+function say(t,k){if(AUDIO[k||t]){new Audio(AUDIO[k||t]).play();return}
+const na=tx('Арабский голос на устройстве не найден. Подключите проверенные аудиозаписи (объект AUDIO в коде).|Түзмөктө арабча үн жок. Текшерилген аудио жазууларды AUDIO объектине кошуңуз.|No Arabic voice on this device. Add verified recordings to the AUDIO object in the code.');
+if(!('speechSynthesis' in window))return toast(na);const v=speechSynthesis.getVoices().find(x=>/^ar/i.test(x.lang));if(!v)return toast(na);
+speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.voice=v;u.lang=v.lang;u.rate=.6;speechSynthesis.speak(u)}
+/* ===== data ===== */
+const L=[['ا','Алиф','Alif'],['ب','Ба','Ba'],['ت','Та','Ta'],['ث','Са','Tha'],['ج','Джим','Jim'],['ح','Ха','Ḥa'],['خ','Хо','Kha'],['د','Даль','Dal'],['ذ','Заль','Dhal'],['ر','Ра','Ra'],['ز','Зай','Zay'],['س','Син','Sin'],['ش','Шин','Shin'],['ص','Сад','Sad'],['ض','Дад','Dad'],['ط','То','Ṭa'],['ظ','Зо','Ẓa'],['ع','Айн','Ayn'],['غ','Гайн','Ghayn'],['ف','Фа','Fa'],['ق','Каф','Qaf'],['ك','Кяф','Kaf'],['ل','Лям','Lam'],['م','Мим','Mim'],['ن','Нун','Nun'],['ه','Ҳа','Ha'],['و','Вау','Waw'],['ي','Я','Ya']];
+const AR={throat:'ءهعحغخ',tongue:'قكجشيضلنرطدتصسزظذث',lips:'فبمو',jawf:'ا'};
+const area=c=>Object.keys(AR).find(k=>AR[k].includes(c));
+const nm=i=>S.lang==='en'?L[i][2]:L[i][1];
+const NJ='ادذرزو',forms=c=>NJ.includes(c)?[c,c,'\u200D'+c,'\u200D'+c]:[c,c+'\u200D','\u200D'+c+'\u200D','\u200D'+c];
+const N={fatha:'Фатха|Фатха|Fatha',kasra:'Касра|Касра|Kasra',damma:'Дамма|Дамма|Damma',tanwin:'Танвин|Танвин|Tanween',sukun:'Сукун|Сукун|Sukun',shadda:'Шадда|Шадда|Shadda',izhar:'Изхар|Изхар|Izhar',idgham:'Идгам|Идгам|Idgham',iqlab:'Икляб|Икляб|Iqlab',ikhfa:'Ихфа|Ихфа|Ikhfa',ikhfaS:'Ихфа шафавия|Ихфа шафавия|Ikhfa shafawi',idghamS:'Идгам мислейн (шафави)|Идгам мислейн (шафави)|Idgham mislayn (shafawi)',izharS:'Изхар шафави|Изхар шафави|Izhar shafawi',tabii:'Мадд табии|Мадд табии|Madd tabii',muttasil:'Мадд муттасиль|Мадд муттасиль|Madd muttasil',munfasil:'Мадд мунфасиль|Мадд мунфасиль|Madd munfasil',lazim:'Мадд лазим|Мадд лазим|Madd lazim',arid:'Мадд ариз лис-сукун|Мадд ариз лис-сукун|Madd arid lis-sukun',throat:'Горло|Тамак|Throat',tongue:'Язык|Тил|Tongue',lips:'Губы|Эрин|Lips',jawf:'Полость рта|Ооз көңдөйү|Mouth cavity',khay:'Хайшум (нос)|Хайшум (мурун)|Khayshum (nose)',qal:'Калькаля|Калькаля|Qalqalah'};
+const label=k=>N[k]?tx(N[k]):/^L\d+$/.test(k)?nm(+k.slice(1)):k;
+const LV=['Алфавит|Алфавит|Alphabet','Огласовки|Белгилер (харакат)|Vowel marks','Основы таджвида|Таджвид негиздери|Tajweed basics','Нун сакина и танвин|Нун сакина жана танвин|Noon sakinah and tanween','Мим сакина|Мим сакина|Meem sakinah','Мадд|Мадд|Madd','Практика чтения|Окуу практикасы|Reading practice'];
+const DUR={tabii:'2',muttasil:'4–5',munfasil:'4–5',lazim:'6',arid:'2/4/6'};
+/* card: [key, text, examples([..] marks highlight), letters] */
+const C={
+2:[['fatha','звук «а»|«а» үнү|sound “a”',['بَ']],['kasra','звук «и»|«и» үнү|sound “i”',['بِ']],['damma','звук «у»|«у» үнү|sound “u”',['بُ']],['tanwin','«ан», «ин», «ун» в конце слова|сөздүн аягында «ан», «ин», «ун»|“an”, “in”, “un” at the end of a word',['بً','بٍ','بٌ']],['sukun','нет гласного звука|үндүү үн жок|no vowel sound',['بْ']],['shadda','удвоение буквы|тамганы эки эселөө|doubling of the letter',['بّ']]],
+3:[['jawf','отсюда звучат долгие гласные (мадд)|бул жерден узун үндүүлөр (мадд) чыгат|long vowels (madd) come from here',[],'ا و ي'],['throat','шесть горловых букв|алты тамак тамгасы|six throat letters',[],'ء ه ع ح غ خ'],['tongue','самая большая группа букв|тамгалардын эң чоң тобу|the largest group of letters',[],'ق ك ج ش ي ض ل ن ر ط د ت ص س ز ظ ذ ث'],['lips','губы участвуют в этих буквах|бул тамгаларда эрин катышат|the lips take part in these letters',[],'ف ب م و'],['khay','носовой звук гунна|мурун үнү: гунна|nasal sound: ghunna',[],'ن م'],['qal','буква с сукуном слегка «отскакивает»|сукундуу тамга бир аз «секирет»|a letter with sukun gives a slight “echo”',[],'ق ط ب ج د']],
+4:[['izhar','читается чётко, без носового звука|даана, мурун үнсүз окулат|read clearly, no nasal sound',['مَ[نْ] [آ]مَنَ','عَلِي[مٌ] [حَ]كِيمٌ'],'ء ه ع ح غ خ'],['idgham','сливается со следующей буквой (с гуннoй: ي ن م و; без гунны: ل ر)|кийинки тамга менен кошулат (гунна менен: ي ن م و; гуннасыз: ل ر)|merges into the next letter (with ghunna: ي ن م و; without: ل ر)',['مَ[نْ] [يَ]قُولُ','مِ[نْ] [لَّ]دُنْهُ'],'ي ر م ل و ن'],['iqlab','нун превращается в мим с гунной|нун гунна менен мимге айланат|noon turns into meem with ghunna',['مِ[نْ] [بَ]عْدِ','سَمِي[عٌ] [بَ]صِيرٌ'],'ب'],['ikhfa','скрывается с гунной|гунна менен жашырылат|hidden with ghunna',['مِ[نْ] [كُ]لِّ','أَ[نْ][تُ]مْ'],'остальные 15|калган 15|other 15']],
+5:[['ikhfaS','мим скрывается с гунной|мим гунна менен жашырылат|meem hidden with ghunna',['تَرْمِيهِ[مْ] [بِ]حِجَارَةٍ','يَعْتَصِ[مْ] [بِ]اللَّهِ'],'ب'],['idghamS','мим сливается с мимом|мим мим менен кошулат|meem merges into meem',['لَهُ[مْ] [مَ]ا','لَكُ[مْ] [مَ]ا'],'م'],['izharS','мим читается чётко (перед و и ف не скрывайте мим)|мим даана окулат (و жана ف алдында жашырбаңыз)|meem read clearly (do not hide it before و and ف)',['هُ[مْ] [فِ]يهَا','أَنْعَ[مْ][تَ]'],'остальные|калгандары|the others']],
+6:[['tabii','нет хамзы и сукуна после буквы мадда|мадд тамгасынан кийин хамза же сукун жок|no hamza or sukun after the madd letter',['قَ[ا]لَ']],['muttasil','буква мадда и хамза в одном слове|мадд тамгасы жана хамза бир сөздө|madd letter and hamza in one word',['جَ[ا]ءَ']],['munfasil','мадд в конце слова, хамза в начале следующего|мадд сөздүн аягында, хамза кийинки сөздүн башында|madd ends a word, hamza starts the next',['بِمَ[ا] أُنزِلَ']],['lazim','после буквы мадда постоянный сукун или шадда|мадд тамгасынан кийин туруктуу сукун же шадда|a permanent sukun or shadda after the madd letter',['ٱلضَّ[ا]لِّينَ']],['arid','сукун появляется при остановке на конце слова|сукун токтоодо сөздүн аягында пайда болот|sukun appears when you stop at the end of a word',['نَسْتَعِ[ي]نْ']]]};
+const KT={2:['fatha','kasra','damma','tanwin','sukun','shadda'],4:['izhar','idgham','iqlab','ikhfa'],5:['ikhfaS','idghamS','izharS'],6:['tabii','muttasil','munfasil','lazim','arid']};
+const QT={1:'Как называется эта буква?|Бул тамга кантип аталат?|What is this letter called?',2:'Как называется знак?|Бул белги эмне деп аталат?|What is this mark called?',3:'Откуда выходит буква?|Тамга кайсы жерден чыгат?|Where does the letter come from?',4:'Какое правило нун сакина или танвина?|Нун сакина же танвин эрежеси кайсы?|Which noon sakinah or tanween rule?',5:'Какое правило мим сакина?|Мим сакина эрежеси кайсы?|Which meem sakinah rule?',6:'Какой это вид мадда?|Бул мадддын кайсы түрү?|Which kind of madd is this?'};
+const NT={};Object.values(C).forEach(a=>a.forEach(c=>NT[c[0]]=c[1]));
+const FAT=[['بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ',[]],['ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَٰلَمِينَ',[['ٱلْعَٰلَمِينَ','tabii']]],['ٱلرَّحْمَٰنِ ٱلرَّحِيمِ',[]],['مَٰلِكِ يَوْمِ ٱلدِّينِ',[['مَٰلِكِ','tabii']]],['إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ',[]],['ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ',[]],['صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ',[['أَنْعَمْتَ','izharS'],['عَلَيْهِمْ غَيْرِ','izharS'],['ٱلضَّآلِّينَ','lazim']]]];
+const QM='Правило мим сакина в слове?|Сөздөгү мим сакина эрежеси?|Meem sakinah rule in this word?';
+const X7=[['أَنْعَمْتَ','izharS',5,QM],['عَلَيْهِمْ غَيْرِ','izharS',5,QM],['ٱلضَّآلِّينَ','lazim',6],['مَٰلِكِ','tabii',6],['ٱلْعَٰلَمِينَ','tabii',6]].map(([ar,k,n,q])=>({ar,k,set:KT[n],q:q||QT[6]}));
+const OKM=['МашаАллах! Прекрасная работа! Пусть Аллах откроет тебе двери полезного знания.|МашаАллах! Эң сонун иш! Аллах сизге пайдалуу илимдин эшигин ачсын.|MashaAllah! Beautiful work! May Allah open the doors of beneficial knowledge for you.','Баракаллаху фики! Отличный результат! Продолжай свой путь к Корану.|Баракаллаху фики! Мыкты жыйынтык! Куранга болгон жолуңузду улантыңыз.|Barakallahu fiki! Great result! Keep going on your path to the Quran.','Каждая выученная буква — ещё один шаг к прекрасному знанию.|Ар бир үйрөнгөн тамга — сонун илимге дагы бир кадам.|Every letter learned is one more step toward beautiful knowledge.'];
+const BADM='Ничего страшного! Ошибки помогают учиться. Давай попробуем ещё раз.|Эч нерсе эмес! Каталар үйрөнүүгө жардам берет. Кайра аракет кылалы.|No worries! Mistakes help us learn. Let’s try again.';
+const NOTE=`<div class="note">${'Правила даны по риваяту Хафс ан Асым. Длину мадда и произношение уточняйте у квалифицированного учителя.|Эрежелер Хафс ан Асым риваяты боюнча. Маддын узундугун жана айтылышын билген окутуучудан тактаңыз.|Rules follow the Hafs ʿan ʿAsim transmission. Confirm madd length and pronunciation with a qualified teacher.'}</div>`;
+const hl=s=>s.replace(/\[(.*?)\]/g,'<b class="h">$1</b>');
+const strip=s=>s.replace(/[\[\]]/g,'');
+/* ===== state / routing ===== */
+let V={n:'home',p:null},Q=null,W={i:1,show:1,d:0},T={s:'pts'},R=[];
+function go(n,p){V={n,p};Q=n==='quiz'?Q:null;render();scrollTo(0,0)}
+function setL(l){S.lang=l;save();render()}
+function reg(){const f=$('#fn').value.trim(),l=$('#ln').value.trim();if(!f)return toast(tx('Введите имя|Атыңызды жазыңыз|Enter your name'));const name=(f+' '+l).trim(),id=name.toLowerCase().replace(/[^\p{L}\p{N}]+/gu,'-');
+if(!S.users[id])S.users[id]={id,name,pts:0,done:[],best:{},learned:[],written:[],wrong:[],hist:[],tasks:{},streak:0,last:'',day:{d:'',p:0},goal:30,visit:0};login(id)}
+function login(id){S.cur=id;me().visit=Date.now();save();go('home')}
+function logout(){S.cur=null;save();go('home')}
+/* ===== views ===== */
+const F={};
+F.welcome=()=>`<section class="card hero rv glow"><div class="ar big">نُور</div><h1>${tx('Ассаляму алейкум! Добро пожаловать в Nur Academy|Ассаламу алейкум! Nur Academy’ге кош келиңиз|Assalamu alaykum! Welcome to Nur Academy')}</h1><p>${tx('Открой путь к Корану шаг за шагом. Учись легко, красиво и с любовью.|Куранга жолду кадам сайын ач. Жеңил, кооз жана сүйүү менен үйрөн.|Open the path to the Quran step by step. Learn easily, beautifully and with love.')}</p>
+<input id="fn" placeholder="${tx('Имя|Аты|First name')}" autocomplete="given-name"><input id="ln" placeholder="${tx('Фамилия|Фамилиясы|Last name')}" autocomplete="family-name"><p><button onclick="reg()">${tx('Создать профиль и начать обучение|Профиль түзүп, окууну баштоо|Create profile and start learning')}</button></p>
+${Object.values(S.users).length?`<p class="mut" style="color:#F6EFD8">${tx('Уже есть профиль:|Профиль бар:|Existing profiles:')}</p>`+Object.values(S.users).map(u=>`<button class="gh" onclick="login('${u.id}')">${esc(u.name)}</button> `).join(''):''}
+<p><button class="gh" onclick="go('teacher')">${tx('Кабинет преподавателя|Окутуучунун кабинети|Teacher panel')}</button></p></section>`;
+F.home=()=>{const u=me(),cur=[1,2,3,4,5,6,7].find(n=>!u.done.includes(n))||7,pr=Math.round(u.done.length/7*100),tp=u.day.d===today()?u.day.p:0,nt=S.tasks.filter(t=>(t.target==='all'||t.target===u.id)&&!u.tasks[t.id]).length;
+return `<section class="card hero rv glow"><h1>${tx('Мой путь к Корану|Менин Куранга жолум|My path to the Quran')}</h1><p>${esc(u.name)}</p><button onclick="go('lvl',${cur})">${tx('Продолжить обучение|Окууну улантуу|Continue learning')} →</button></section>
+<p style="text-align:center;font-size:1.4rem;color:var(--gold);font-family:'Cormorant Garamond',serif;font-weight:700">Илим жашка карабайт. Ар бир тамга — илимге, ар бир кадам — Куранга.</p>
+<div class="gr">${[[tx('Уровень|Деңгээл|Level'),cur],[tx('Баллы|Упай|Points'),u.pts],[tx('Серия дней|Күн сериясы|Day streak'),u.streak],[tx('Букв изучено|Тамга үйрөнүлдү|Letters learned'),u.learned.length+'/28']].map(x=>`<div class="card rv" style="text-align:center"><div class="mut">${x[0]}</div><h2>${x[1]}</h2></div>`).join('')}</div>
+<div class="card rv"><b>${tx('Прогресс|Прогресс|Progress')}: ${pr}%</b><div class="bar"><i style="width:${pr}%"></i></div><b>${tx('Цель на сегодня|Бүгүнкү максат|Today’s goal')}: ${tp}/${u.goal} ${tx('баллов|упай|pts')}</b><div class="bar"><i style="width:${Math.min(100,tp/u.goal*100)}%"></i></div>
+<select style="max-width:140px" onchange="me().goal=+this.value;save();render()">${[20,30,50,100].map(g=>`<option ${g==u.goal?'selected':''}>${g}</option>`)}</select></div>
+<h3>${tx('Карта обучения|Окуу картасы|Learning map')}</h3><div class="path">${LV.map((t,i)=>`<div class="node rv ${u.done.includes(i+1)?'d':i+1==cur?'c':''}" onclick="go('lvl',${i+1})"><span>${u.done.includes(i+1)?'✓':i+1}</span><small>${tx(t)}</small></div>`).join('')}</div>
+<div class="card rv" style="margin-top:16px"><button class="gh" onclick="go('tasks')">${tx('Задания от преподавателя|Окутуучунун тапшырмалары|Teacher’s tasks')}${nt?` (${nt} ${tx('новых|жаңы|new')})`:''}</button></div>`};
+F.alpha=()=>{const u=me();return `<h2>${tx('Арабский алфавит|Араб алфавити|Arabic alphabet')}</h2><p class="mut">${tx('Изучено|Үйрөнүлдү|Learned')}: ${u.learned.length}/28</p><div class="bar"><i style="width:${u.learned.length/28*100}%"></i></div>
+<div class="note">${tx('Звук кнопок — голос устройства, а не чтение Корана. Для точности подключите проверенные записи (AUDIO в коде).|Баскычтардын үнү — түзмөктүн үнү, Куран окуу эмес. Тактык үчүн текшерилген жазууларды кошуңуз (коддогу AUDIO).|Button audio is the device voice, not Quran recitation. For accuracy add verified recordings (AUDIO in the code).')}</div>
+<div class="gr">${L.map((l,i)=>`<div class="card lt rv" onclick="go('letter',${i})"><div class="ar">${l[0]}</div><b>${nm(i)}</b><br><small>${u.learned.includes(i)?'✓':'·'}</small></div>`).join('')}</div><button onclick="startQ(1)">${tx('Режим запоминания (тест)|Эстөө режими (тест)|Memory mode (quiz)')}</button>`};
+const sayL=i=>say(L[i][0]==='ا'?'أَ':L[i][0]+'َ',L[i][0]);
+F.letter=()=>{const i=V.p,c=L[i][0],u=me(),f=forms(c),a=area(c);
+return `<button class="gh" onclick="go('alpha')">←</button><div class="card rv glow" style="text-align:center"><div class="ar huge">${c}</div><h2>${nm(i)}</h2><p><span class="tag">${tx('Махрадж|Махрадж|Makhraj')}: ${label(a)}</span>${'خصضغطقظ'.includes(c)?`<span class="tag">${tx('Тафхим|Тафхим|Tafkhim')}</span>`:''}${'قطبجد'.includes(c)?`<span class="tag">${label('qal')}</span>`:''}</p>
+<button onclick="sayL(${i})">🔊 ${tx('Прослушать|Угуу|Listen')}</button>
+<div class="gr" style="margin:14px 0">${[[tx('В начале|Башында|Initial'),f[1]],[tx('В середине|Ортосунда|Medial'),f[2]],[tx('В конце|Аягында|Final'),f[3]],[tx('Отдельно|Өзүнчө|Isolated'),f[0]]].map(x=>`<div><div class="ar ex">${x[1]}</div><small class="mut">${x[0]}</small></div>`).join('')}</div>
+<div class="ar ex">${c}َ &nbsp; ${c}ِ &nbsp; ${c}ُ</div>
+<p><button class="${u.learned.includes(i)?'gh':''}" onclick="tgl(${i})">${u.learned.includes(i)?'✓ ':''}${tx('Выучил(а)|Үйрөндүм|Learned')}</button> <button class="gh" onclick="W.i=${i};go('write')">✍️ ${tx('Писать|Жазуу|Write')}</button></p><p class="mut">${tx('Полные сифаты букв будут добавлены на следующем этапе.|Тамгалардын толук сифаттары кийинки этапта кошулат.|Full letter attributes (sifat) come in the next stage.')}</p></div>
+<button class="gh" onclick="go('letter',${(i+27)%28})">←</button> <button class="gh" onclick="go('letter',${(i+1)%28})">→</button>`};
+function tgl(i){const u=me(),k=u.learned.indexOf(i);if(k<0){u.learned.push(i);addPts(u,2);conf()}else u.learned.splice(k,1);save();render()}
+F.lvl=()=>{const n=V.p;let h=`<h2>${n}. ${tx(LV[n-1])}</h2>`;
+if(n==1)h+=`<div class="card rv"><p>${tx('Изучите 28 букв: названия, места выхода и написание.|28 тамганы үйрөнүңүз: аталышы, чыгуу жери жана жазылышы.|Learn the 28 letters: names, places of articulation and writing.')}</p><button onclick="go('alpha')">${tx('Открыть алфавит|Алфавитти ачуу|Open the alphabet')}</button> <button class="gh" onclick="go('write')">✍️ ${tx('Письмо|Жазуу|Writing')}</button></div>`;
+else if(n==7)h+=`<p class="mut">${tx('Сура Аль-Фатиха. Читайте вслух и находите правила.|Аль-Фатиха сүрөсү. Үн чыгарып окуп, эрежелерди табыңыз.|Surah Al-Fatiha. Read aloud and find the rules.')}</p>`+FAT.map((a,i)=>`<div class="card rv"><div class="row"><span class="tag">${i+1}</span><button class="gh" data-s="${a[0]}" onclick="say(this.dataset.s)">🔊</button></div><div class="ar ex">${a[0]}</div>${a[1].map(x=>`<div class="mut"><span class="ar">${x[0]}</span> — ${label(x[1])}</div>`).join('')}</div>`).join('');
+else C[n].forEach(c=>{h+=`<div class="card rv"><h3>${label(c[0])}${c[3]?` <span class="tag" dir="auto">${tx(c[3])}</span>`:''}</h3><p>${tx(c[1])}${DUR[c[0]]?` — <b>${DUR[c[0]]} ${tx('харакат|харакат|harakat')}</b>`:''}</p>${c[2].map(e=>`<div class="row"><span class="ar ex">${hl(e)}</span><button class="gh" data-s="${strip(e)}" onclick="say(this.dataset.s)">🔊</button></div>`).join('')}</div>`});
+return h+`<p><button class="glow" onclick="startQ(${n})">${tx('Пройти тест|Тестти өтүү|Take the quiz')}</button></p>`+NOTE};
+/* ===== quiz ===== */
+function items(n){let r=[];
+if(n==1)r=pick(L.map((_,i)=>i),10).map(i=>({ar:L[i][0],k:'L'+i,set:pick(L.map((_,j)=>j).filter(j=>j!=i),3).map(j=>'L'+j)}));
+else if(n==3)r=pick([...'عحءقنرفبماطخ'],10).map(c=>({ar:c,k:area(c),set:['throat','tongue','lips','jawf']}));
+else if(n==7)r=X7.map(x=>({...x}));
+else C[n].forEach(c=>c[2].forEach(e=>r.push({ar:strip(e),k:c[0],set:KT[n]})));
+return sh(r).map(x=>({...x,q:x.q||QT[n]}))}
+function startQ(n,rep){const u=me(),it=rep?pick(u.wrong,10):items(n);if(!it.length)return toast(tx('Ошибок для повторения нет|Кайталоо үчүн ката жок|No mistakes to review'));Q={n,it,i:0,s:0,a:null,rep:!!rep,fin:0};go('quiz')}
+F.quiz=()=>{const z=Q,u=me();if(z.i>=z.it.length)return fin();const it=z.it[z.i];if(!it.o)it.o=sh([it.k,...pick(it.set.filter(x=>x!=it.k),3)]);
+const ok=z.a!==null&&it.o[z.a]===it.k;
+return `<div class="row"><b>${z.i+1} / ${z.it.length}</b><span class="tag">${tx('Баллы|Упай|Points')}: ${z.s*10}</span></div><div class="bar"><i style="width:${z.i/z.it.length*100}%"></i></div>
+<div class="card"><p class="mut">${tx(it.q)}</p><div class="ar ex" style="text-align:center;font-size:2.6rem">${it.ar}</div>
+${it.o.map((o,j)=>`<button class="opt ${z.a!==null?(o==it.k?'ok':j==z.a?'bad':''):''}" ${z.a!==null?'disabled':''} onclick="ans(${j})">${label(o)}</button>`).join('')}
+${z.a!==null?`<div class="note glow"><b>${ok?tx(OKM[z.i%3]):tx(BADM)}</b>${ok?'':`<br>${tx('Правильный ответ|Туура жооп|Correct answer')}: <b>${label(it.k)}</b>`}${NT[it.k]?`<br>${tx(NT[it.k])}`:''}</div><button onclick="Q.i++;Q.a=null;render()">${z.i+1<z.it.length?tx('Дальше|Кийинки|Next'):tx('Результат|Жыйынтык|Result')}</button>`:''}</div>`};
+function ans(j){const z=Q,u=me(),it=z.it[z.i];if(z.a!==null)return;z.a=j;if(it.o[j]===it.k){z.s++;addPts(u,10);if(z.rep)u.wrong=u.wrong.filter(w=>!(w.ar==it.ar&&w.k==it.k))}else if(!u.wrong.some(w=>w.ar==it.ar&&w.k==it.k))u.wrong.push({ar:it.ar,k:it.k,set:it.set,q:it.q});save();render()}
+function fin(){const z=Q,u=me(),p=Math.round(z.s/z.it.length*100),st=p>=90?3:p>=70?2:p>=50?1:0;let bonus='';
+if(!z.fin){z.fin=1;if(!z.rep){u.best[z.n]=Math.max(u.best[z.n]||0,p);u.hist.unshift(tx(LV[z.n-1])+': '+p+'% ('+today()+')');if(p>=60&&!u.done.includes(z.n)){u.done.push(z.n);addPts(u,50);bonus=1}}if(p>=80||bonus)conf();save()}
+return `<div class="card hero glow"><h2 style="color:#fff">${'⭐'.repeat(st)||'📖'} ${p}%</h2><p>${z.s*10} ${tx('баллов за тест|упай тест үчүн|points for this quiz')}${p>=60&&!z.rep?` · ${tx('уровень пройден (+50)|деңгээл өттү (+50)|level complete (+50)')}`:''}</p><button onclick="${z.rep?'startQ(0,1)':`startQ(${z.n})`}">${tx('Ещё раз|Кайра|Again')}</button> <button class="gh" onclick="go('home')">${tx('На главную|Башкы бетке|Home')}</button></div>`}
+/* ===== writing (canvas, self-check) ===== */
+F.write=()=>`<h2>${tx('Обучение письму|Жазууну үйрөнүү|Learn to write')}</h2><div class="row" style="margin-bottom:10px">${L.map((l,i)=>`<button class="${i==W.i?'':'gh'}" style="padding:4px 10px;min-height:40px" onclick="W.i=${i};render()"><span class="ar" style="font-size:1.3rem">${l[0]}</span></button>`).join('')}</div>
+<div class="row" style="align-items:flex-start"><div style="flex:1;min-width:260px"><p>${tx('Напиши букву|Тамганы жаз|Write the letter')} <b class="ar" style="font-size:1.6rem">${L[W.i][0]}</b> (${nm(W.i)})</p><canvas id="cv" width="320" height="320"></canvas></div>
+<div style="flex:1;min-width:200px;text-align:center"><p class="mut">${tx('Образец|Үлгү|Sample')}</p><div class="ar" id="sm" style="font-size:9rem;line-height:1.2;color:var(--em)">${W.show?L[W.i][0]:'?'}</div></div></div>
+<p class="row"><button class="gh" onclick="wClr()">${tx('Очистить|Тазалоо|Clear')}</button><button class="gh" onclick="W.show=!W.show;$('#sm').textContent=W.show?L[W.i][0]:'?'">${tx('Показать/скрыть образец|Үлгүнү көрсөтүү/жашыруу|Show/hide sample')}</button><button onclick="wOk()">✓ ${tx('Я сверил(а) с образцом|Үлгү менен салыштырдым|I checked against the sample')}</button></p>
+<div class="note">${tx('Автоматической проверки письма нет: сравните свою букву с образцом и подтвердите сами.|Жазууну автоматтык текшерүү жок: тамганы үлгү менен салыштырып, өзүңүз ырастаңыз.|There is no automatic handwriting check: compare with the sample and confirm yourself.')}</div>`;
+function wClr(){const c=$('#cv');c.getContext('2d').clearRect(0,0,c.width,c.height)}
+function wOk(){const u=me();if(!u.written.includes(W.i)){u.written.push(W.i);addPts(u,5);conf()}save();toast(tx('Баллы получены! +5|Упай алынды! +5|Points earned! +5'));W.i=(W.i+1)%28;render()}
+function wInit(){const c=$('#cv');if(!c)return;const x=c.getContext('2d');x.lineWidth=10;x.lineCap=x.lineJoin='round';x.strokeStyle=getComputedStyle(document.documentElement).getPropertyValue('--ink').trim()||'#17302A';
+const p=e=>{const r=c.getBoundingClientRect();return[(e.clientX-r.left)*c.width/r.width,(e.clientY-r.top)*c.height/r.height]};
+c.onpointerdown=e=>{c.setPointerCapture(e.pointerId);W.d=1;x.beginPath();x.moveTo(...p(e))};c.onpointermove=e=>{if(W.d){x.lineTo(...p(e));x.stroke()}};c.onpointerup=c.onpointercancel=()=>W.d=0}
+/* ===== tasks (student) ===== */
+const STL={new:'Новое|Жаңы|New',prog:'В процессе|Жүрүүдө|In progress',sent:'Отправлено|Жөнөтүлдү|Submitted',checked:'Проверено|Текшерилди|Checked',done:'Завершено|Аяктады|Completed'};
+F.tasks=()=>{const u=me(),ts=S.tasks.filter(t=>t.target==='all'||t.target===u.id);
+return `<h2>${tx('Задания от преподавателя|Окутуучунун тапшырмалары|Tasks from the teacher')}</h2>`+(ts.length?ts.map(t=>{const s=u.tasks[t.id]||{st:'new'};return `<div class="card rv"><h3>${esc(t.title)}</h3><p>${esc(t.desc)}</p><p class="mut">${tx('Уровень|Деңгээл|Level')} ${t.level}${t.due?' · '+tx('срок|мөөнөтү|due')+' '+t.due:''}</p><span class="tag">${tx(STL[s.st])}</span>
+${s.st=='new'?`<button onclick="tset(${t.id},'prog')">${tx('Начать|Баштоо|Start')}</button>`:''}${s.st=='prog'?`<textarea id="a${t.id}" rows="3" placeholder="${tx('Ваш ответ|Жообуңуз|Your answer')}">${esc(s.ans||'')}</textarea><p><button onclick="tsend(${t.id})">${tx('Отправить на проверку|Текшерүүгө жөнөтүү|Submit')}</button></p>`:''}
+${s.st=='checked'?`<p><b>${s.score} ${tx('баллов|упай|pts')}</b>${s.comment?': '+esc(s.comment):''}</p><button onclick="tset(${t.id},'done')">${tx('Завершить|Аяктоо|Complete')}</button>`:''}</div>`}).join(''):`<div class="card">${tx('Пока нет заданий. Когда преподаватель опубликует задание, оно появится здесь.|Азырынча тапшырма жок. Окутуучу жарыялаганда ушул жерде чыгат.|No tasks yet. They appear here when the teacher publishes one.')}</div>`)};
+function tset(id,st){const u=me();(u.tasks[id]=u.tasks[id]||{}).st=st;save();render()}
+function tsend(id){const u=me(),s=u.tasks[id];s.ans=$('#a'+id).value;s.st='sent';save();toast(tx('Отправлено на проверку|Текшерүүгө жөнөтүлдү|Submitted'));render()}
+/* ===== achievements ===== */
+F.ach=()=>{const u=me(),B=[['🌱','Первая буква|Биринчи тамга|First letter',u.learned.length>=1],['📖','Весь алфавит|Бүт алфавит|Full alphabet',u.learned.length>=28],['⭐','100 баллов|100 упай|100 points',u.pts>=100],['🔥','Серия 3 дня|3 күндүк серия|3-day streak',u.streak>=3],['🏅','Уровень 1|1-деңгээл|Level 1',u.done.includes(1)],['✍️','Письмо: 5 букв|Жазуу: 5 тамга|Writing: 5 letters',u.written.length>=5],['🕌','Все уровни|Бардык деңгээл|All levels',u.done.length>=7]];
+return `<h2>${tx('Мои достижения|Менин жетишкендиктерим|My achievements')}</h2><div class="gr">${B.map(b=>`<div class="card badge ${b[2]?'on':''}" style="text-align:center"><div style="font-size:2.4rem">${b[0]}</div>${tx(b[1])}</div>`).join('')}</div>
+<p><button class="gh" onclick="startQ(0,1)">${tx('Повторить ошибки|Каталарды кайталоо|Review mistakes')} (${u.wrong.length})</button></p><h3>${tx('История обучения|Окуу тарыхы|Learning history')}</h3>${u.hist.slice(0,8).map(h=>`<div class="card" style="padding:8px 14px">${esc(h)}</div>`).join('')||`<p class="mut">—</p>`}
+<p class="mut">${tx('Сертификаты и календарь занятий появятся на следующем этапе.|Сертификаттар жана сабак календары кийинки этапта кошулат.|Certificates and the lesson calendar come in the next stage.')}</p>`};
+/* ===== teacher panel ===== */
+F.teacher=()=>{const us=Object.values(S.users).sort((a,b)=>T.s=='lvl'?b.done.length-a.done.length||b.pts-a.pts:b.pts-a.pts);R=[];
+let rv='';S.tasks.forEach(t=>us.forEach(u=>{const s=u.tasks[t.id];if(s&&s.st=='sent'){const r=R.push({u:u.id,t:t.id})-1;rv+=`<div class="card"><b>${esc(u.name)}</b> — ${esc(t.title)}<p>${esc(s.ans||'')}</p><input id="cm${r}" placeholder="${tx('Комментарий|Комментарий|Comment')}"><input id="sc${r}" type="number" placeholder="${tx('Баллы|Упай|Points')}" style="margin:6px 0"><button onclick="chk(${r})">${tx('Проверено|Текшерилди|Mark checked')}</button></div>`}}));
+return `<h2>${tx('Кабинет преподавателя|Окутуучунун кабинети|Teacher panel')}</h2><div class="note">${tx('Данные хранятся только в этом браузере, входа и защиты пока нет. Общую базу, роли Student/Admin и защиту (Supabase + RLS) нужно подключить на следующем этапе.|Маалымат ушул браузерде гана сакталат, кирүү жана коргоо азырынча жок. Жалпы база, Student/Admin ролдору жана коргоо (Supabase + RLS) кийинки этапта кошулат.|Data lives only in this browser; there is no login or protection yet. A shared database, Student/Admin roles and security (Supabase + RLS) come in the next stage.')}</div>
+<div class="card" style="overflow-x:auto"><table><tr><th>#</th><th>${tx('Имя ученика|Окуучу|Student')}</th><th onclick="T.s='lvl';render()">${tx('Уровень|Деңгээл|Level')}</th><th onclick="T.s='pts';render()">${tx('Баллы|Упай|Points')}</th><th>${tx('Прогресс|Прогресс|Progress')}</th><th>${tx('Тесты|Тесттер|Tests')}</th><th>${tx('Статус|Статус|Status')}</th></tr>
+${us.map((u,i)=>{const d=(Date.now()-(u.visit||0))/864e5;return `<tr><td>${i+1}</td><td>${esc(u.name)}</td><td>L${Math.min(7,u.done.length+1)}</td><td>${u.pts}</td><td>${Math.round(u.done.length/7*100)}%</td><td>${Object.entries(u.best).map(([k,v])=>'L'+k+':'+v+'%').join(' ')||'—'}</td><td>${d>=3?tx('Отстаёт (3+ дн.)|Артта (3+ күн)|Inactive (3+ days)'):tx('Активен|Активдүү|Active')}</td></tr>`}).join('')||`<tr><td colspan=7>${tx('Учеников пока нет|Окуучулар жок|No students yet')}</td></tr>`}</table></div>
+<h3>${tx('Новое задание|Жаңы тапшырма|New task')}</h3><div class="card"><input id="tt" placeholder="${tx('Название|Аталышы|Title')}"><textarea id="td" rows="2" placeholder="${tx('Описание|Сүрөттөмө|Description')}" style="margin:6px 0"></textarea><div class="row"><select id="tl" style="flex:1">${[1,2,3,4,5,6,7].map(n=>`<option value="${n}">${n}. ${tx(LV[n-1])}</option>`)}</select><select id="tg" style="flex:1"><option value="all">${tx('Вся группа|Бардык топ|Whole group')}</option>${us.map(u=>`<option value="${u.id}">${esc(u.name)}</option>`)}</select><input id="tu" type="date" style="flex:1"></div><p><button onclick="addT()">${tx('Опубликовать|Жарыялоо|Publish')}</button></p></div>
+<h3>${tx('На проверку|Текшерүүгө|To review')}</h3>${rv||`<p class="mut">—</p>`}<p><button class="gh" onclick="go('home')">←</button></p>`};
+function addT(){const t=$('#tt').value.trim();if(!t)return toast(tx('Введите название|Аталышын жазыңыз|Enter a title'));S.tasks.push({id:Date.now(),title:t,desc:$('#td').value,level:+$('#tl').value,target:$('#tg').value,due:$('#tu').value});save();render()}
+function chk(r){const q=R[r],s=S.users[q.u].tasks[q.t];s.st='checked';s.comment=$('#cm'+r).value;s.score=+$('#sc'+r).value||0;addPts(S.users[q.u],s.score);save();render()}
+/* ===== shell ===== */
+const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08}):null;
+function render(){document.documentElement.lang=S.lang;
+$('#hd').innerHTML=`<b onclick="go('home')">NUR <i>ACADEMY</i></b><div class="lg">${[['ky','🇰🇬 KY'],['ru','🇷🇺 RU'],['en','🇬🇧 EN']].map(([c,n])=>`<button class="${S.lang==c?'on':''}" onclick="setL('${c}')">${n}</button>`).join('')}</div>`;
+const items=[['home','Главная|Башкы бет|Home'],['alpha','Алфавит|Алфавит|Alphabet'],['write','Письмо|Жазуу|Writing'],['tasks','Задания|Тапшырмалар|Tasks'],['ach','Награды|Жетишкендиктер|Awards'],['teacher','Преподаватель|Окутуучу|Teacher']];
+$('#nv').style.display=S.cur?'flex':'none';
+$('#nv').innerHTML=items.map(x=>`<button class="${V.n==x[0]?'on':''}" onclick="go('${x[0]}')">${tx(x[1])}</button>`).join('')+`<button class="gh" onclick="logout()">${tx('Выход|Чыгуу|Log out')}</button>`;
+const v=(!S.cur&&V.n!=='teacher')?'welcome':V.n;$('#app').innerHTML=F[v]();
+if(v=='write')wInit();document.querySelectorAll('.rv').forEach(e=>io?io.observe(e):e.classList.add('in'))}
+if('speechSynthesis' in window)speechSynthesis.getVoices();
+render();
+</script>
+</body>
+</html>
